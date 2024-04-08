@@ -8,6 +8,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Display the Neofetch
+if [ $(dpkg -s neofetch 2>/dev/null | grep -c "ok installed") -eq 1 ];
+then 
+	clear
+	neofetch
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -112,7 +119,7 @@ source $ZSH/oh-my-zsh.sh
 alias mv="mv -i"
 
 # Proxy setting
-source /etc/profile
+# source /etc/profile
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
