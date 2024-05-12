@@ -12,7 +12,6 @@ fi
 if [ $(dpkg -s neofetch 2>/dev/null | grep -c "ok installed") -eq 1 ];
 then 
 	clear
-	neofetch
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -134,9 +133,9 @@ then
         eval "$__conda_setup"
     else
         if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-            . "$HOME/miniconda3/etc/profile.d/conda.sh"
+# . "$HOME/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
         else
-            export PATH="$HOME/miniconda3/bin:$PATH"
+# export PATH="$HOME/miniconda3/bin:$PATH"  # commented out by conda initialize
         fi
     fi
     unset __conda_setup
